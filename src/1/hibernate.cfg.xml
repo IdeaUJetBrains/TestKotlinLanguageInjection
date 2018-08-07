@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">C:/Users/Olga Pavlova/IdeaProjects/ALL_X_TEST_KOTLIN_PROJECT/TestKotlin/DB</property>
+        <property name="connection.driver_class">org.hsqldb.jdbc.JDBCDriver</property>
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password">sa</property>
+        <property name="hibernate.implicit_naming_strategy">newutil.MyImplicitNamingStrategy</property>
+        <!--<property name="hibernate.physical_naming_strategy">newutil.MyLegacyPhysicalNamingStrategy</property>-->
+        <!--<property name="hibernate.archive.autodetection">class</property>-->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <!--<property name="hbm2ddl.auto">update</property>-->
+
+
+        <mapping class="entity.Entitybus"/>
+        <mapping class="entity.Naming"/>
+        <mapping resource="notentity/Bus.hbm.xml"/>
+
+
+
+    </session-factory>
+</hibernate-configuration>

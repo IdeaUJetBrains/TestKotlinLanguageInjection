@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="NewPersistenceUnit">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!--<non-jta-data-source>java:comp/env/java:jboss/datasources/oracle</non-jta-data-source>-->
+        <mapping-file>orm/Bus.xml</mapping-file>
+
+        <class>entity.Entitybus</class>
+        <!--<class>entity.Naming</class>-->
+
+
+
+        <!--<non-jta-data-source>java:/hibernateProperties/hibernate.properties</non-jta-data-source>-->
+
+        <!--TODO CHECK HSQL database -->
+        <properties>
+            <property name="hibernate.connection.url" value="C:/Users/Olga Pavlova/IdeaProjects/ALL_X_TEST_KOTLIN_PROJECT/TestKotlin/DB"/>
+            <property name="hibernate.connection.driver_class" value="org.hsqldb.jdbc.JDBCDriver"/>
+            <property name="hibernate.connection.username" value="sa"/>
+            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.archive.autodetection" value="class"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+
+            <!--<property name="hbm2ddl.auto" value="update"/>-->
+            <!--<property name="hibernate.physical_naming_strategy" value="newutil.MyLegacyPhysicalNamingStrategy"/>-->
+            <property name="hibernate.implicit_naming_strategy" value="newutil.MyImplicitNamingStrategy"/>
+
+        </properties>
+
+        <!--TODO CHECK MySQL database:5.7: from docker image opavlova/db-mysql:5.7 -->
+        <!-- <properties>
+             <property name="hibernate.connection.url" value="jdbc:mysql://172.27.121.104:13308/DOCKERDB"/>
+             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+             <property name="hibernate.connection.username" value="root"/>
+             <property name="hibernate.connection.password" value="root"/>
+             <property name="hibernate.archive.autodetection" value="class"/>
+             <property name="hibernate.show_sql" value="true" />
+             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+             <property name="hbm2ddl.auto" value="update"/>
+             <property name="hibernate.physical_naming_strategy" value="newutil.MyLegacyPhysicalNamingStrategy"/>
+             &lt;!&ndash;<property name="hibernate.implicit_naming_strategy" value="newutil.MyImplicitNamingStrategy"/>&ndash;&gt;
+         </properties>-->
+
+
+        <!--TODO CHECK ORACLE database: Oracle 10.2.0 Express Edition. -->
+        <!--<class>entity.Naming1</class>
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:oracle:thin:@//qa-vmws-xp:1521/xe"/>
+            <property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+            <property name="hibernate.connection.username" value="guest"/>
+            <property name="hibernate.connection.password" value="guest"/>
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
+            <property name="hbm2ddl.auto" value="update"/>
+            &lt;!&ndash;<property name="hibernate.physical_naming_strategy" value="newutil.MyLegacyPhysicalNamingStrategy"/>&ndash;&gt;
+            <property name="hibernate.implicit_naming_strategy" value="newutil.MyImplicitNamingStrategy"/>
+        </properties>-->
+
+        <!--&lt;!&ndash;TODO CHECK Postgres database:9.6: from docker image opavlova/db-postgres:9.6 &ndash;&gt;
+        <properties>
+            <property name="hibernate.connection.url"
+                      value="jdbc:postgresql://172.27.121.104:15437/DOCKERDB"/>
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect"/>
+            <property name="hbm2ddl.auto" value="update"/>
+            &lt;!&ndash;<property name="hibernate.physical_naming_strategy" value="newutil.MyLegacyPhysicalNamingStrategy"/>&ndash;&gt;
+            <property name="hibernate.implicit_naming_strategy" value="newutil.MyImplicitNamingStrategy"/>
+        </properties>-->
+
+        <!--TODO CHECK H2 database: from docker image opavlova/db-h2 -->
+        <!--<properties>
+            &lt;!&ndash;<property name="hibernate.connection.url"
+                      value="jdbc:h2:tcp://172.27.121.104:11521/default"/>&ndash;&gt;
+            <property name="hibernate.connection.url"
+                      value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"/>
+
+            <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
+            <property name="hibernate.connection.username" value="sa"/>
+            <property name="hibernate.connection.password" value="sa"/>
+            &lt;!&ndash;<property name="hibernate.show_sql" value="true"/>&ndash;&gt;
+            &lt;!&ndash;<property name="hibernate.format_sql" value="true"/>&ndash;&gt;
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hbm2ddl.auto" value="update"/>
+            &lt;!&ndash;<property name="hibernate.physical_naming_strategy" value="newutil.MyLegacyPhysicalNamingStrategy"/>&ndash;&gt;
+            <property name="hibernate.implicit_naming_strategy" value="newutil.MyImplicitNamingStrategy"/>
+        </properties>-->
+        <!--TODO CHECK Derby database -->
+        <!-- <properties>
+             <property name="hibernate.connection.url" value="jdbc:derby://172.27.121.11:1527/DOCKERDB"/>
+             <property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.ClientDriver"/>
+             <property name="hibernate.connection.username" value="root"/>
+             <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+             <property name="hbm2ddl.auto" value="update"/>
+             &lt;!&ndash;<property name="hibernate.physical_naming_strategy" value="newutil.MyLegacyPhysicalNamingStrategy"/>&ndash;&gt;
+             <property name="hibernate.implicit_naming_strategy" value="newutil.MyImplicitNamingStrategy"/>
+
+         </properties>-->
+
+    </persistence-unit>
+    <persistence-unit name="PU">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!--<mapping-file>orm/Bus.xml</mapping-file>-->
+        <class>entity.Entitybus</class>
+        <!--<class>entity.Naming</class>-->
+
+        <!--<non-jta-data-source>java:/hibernateProperties/hibernate.properties</non-jta-data-source>-->
+
+        <!--TODO CHECK HSQL database -->
+        <!--<properties>-->
+        <!--<property name="hibernate.connection.url" value="jdbc:hsqldb:file:C:/Users/Olga Pavlova/IdeaProjects/TestHibernate5.2.2WithNamingStrategy/db4/DB"/>-->
+        <!--<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbc.JDBCDriver"/>-->
+        <!--<property name="hibernate.connection.username" value=""/>-->
+        <!--<property name="hibernate.connection.password" value=""/>-->
+        <!--<property name="hibernate.archive.autodetection" value="class"/>-->
+        <!--<property name="hibernate.show_sql" value="true"/>-->
+        <!--<property name="hibernate.format_sql" value="true"/>-->
+        <!--<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>-->
+
+        <!--<property name="hbm2ddl.auto" value="update"/>-->
+        <!--&lt;!&ndash;<property name="hibernate.physical_naming_strategy" value="newutil.MyLegacyPhysicalNamingStrategy"/>&ndash;&gt;-->
+        <!--<property name="hibernate.implicit_naming_strategy" value="newutil.MyImplicitNamingStrategy"/>-->
+
+        <!--</properties>-->
+
+        <!--TODO CHECK MySQL database:5.7: from docker image opavlova/db-mysql:5.7 -->
+        <!-- <properties>
+             <property name="hibernate.connection.url" value="jdbc:mysql://172.27.121.104:13308/DOCKERDB"/>
+             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+             <property name="hibernate.connection.username" value="root"/>
+             <property name="hibernate.connection.password" value="root"/>
+             <property name="hibernate.archive.autodetection" value="class"/>
+             <property name="hibernate.show_sql" value="true" />
+             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+             <property name="hbm2ddl.auto" value="update"/>
+             <property name="hibernate.physical_naming_strategy" value="newutil.MyLegacyPhysicalNamingStrategy"/>
+             &lt;!&ndash;<property name="hibernate.implicit_naming_strategy" value="newutil.MyImplicitNamingStrategy"/>&ndash;&gt;
+         </properties>-->
+
+
+        <!--TODO CHECK ORACLE database: Oracle 10.2.0 Express Edition. -->
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:oracle:thin:@//qa-vmws-xp:1521/xe"/>
+            <property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+            <property name="hibernate.connection.username" value="guest"/>
+            <property name="hibernate.connection.password" value="guest"/>
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
+            <property name="hbm2ddl.auto" value="update"/>
+            <!--<property name="hibernate.physical_naming_strategy" value="newutil.MyLegacyPhysicalNamingStrategy"/>-->
+            <!--<property name="hibernate.implicit_naming_strategy" value="newutil.MyImplicitNamingStrategy"/>-->
+        </properties>
+
+        <!--&lt;!&ndash;TODO CHECK Postgres database:9.6: from docker image opavlova/db-postgres:9.6 &ndash;&gt;
+        <properties>
+            <property name="hibernate.connection.url"
+                      value="jdbc:postgresql://172.27.121.104:15437/DOCKERDB"/>
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect"/>
+            <property name="hbm2ddl.auto" value="update"/>
+            &lt;!&ndash;<property name="hibernate.physical_naming_strategy" value="newutil.MyLegacyPhysicalNamingStrategy"/>&ndash;&gt;
+            <property name="hibernate.implicit_naming_strategy" value="newutil.MyImplicitNamingStrategy"/>
+        </properties>-->
+
+        <!--&lt;!&ndash;TODO CHECK H2 database: from docker image opavlova/db-h2 &ndash;&gt;
+        <properties>
+            <property name="hibernate.connection.url"
+                      value="jdbc:h2:tcp://172.27.121.104:11521/default"/>
+            <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
+            <property name="hibernate.connection.username" value=""/>
+            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hbm2ddl.auto" value="update"/>
+            &lt;!&ndash;<property name="hibernate.physical_naming_strategy" value="newutil.MyLegacyPhysicalNamingStrategy"/>&ndash;&gt;
+            <property name="hibernate.implicit_naming_strategy" value="newutil.MyImplicitNamingStrategy"/>
+        </properties>-->
+        <!--TODO CHECK Derby database -->
+        <!-- <properties>
+             <property name="hibernate.connection.url" value="jdbc:derby://172.27.121.11:1527/DOCKERDB"/>
+             <property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.ClientDriver"/>
+             <property name="hibernate.connection.username" value="root"/>
+             <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+             <property name="hbm2ddl.auto" value="update"/>
+             &lt;!&ndash;<property name="hibernate.physical_naming_strategy" value="newutil.MyLegacyPhysicalNamingStrategy"/>&ndash;&gt;
+             <property name="hibernate.implicit_naming_strategy" value="newutil.MyImplicitNamingStrategy"/>
+
+         </properties>-->
+
+    </persistence-unit>
+</persistence>
