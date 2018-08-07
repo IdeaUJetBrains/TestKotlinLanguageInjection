@@ -36,14 +36,15 @@ public class HibernateMainJava {
         session.createQuery("select c from Entitybus c", Entitybus.class);
         session.createNamedQuery("My.Test");
         session.createNamedQuery("My.Test", Entitybus.class);
-        session.createNativeQuery("select c from Entitybus c");
-        session.createNativeQuery("select c from Entitybus c", Entitybus.class);
-        session.createNativeQuery("select c from Entitybus c","AuthorValueMapping");
-
+        session.createNativeQuery("SELECT * FROM ENTITYBUS");
+        session.createNativeQuery("SELECT EID, ENUMBER FROM ENTITYBUS", Entitybus.class);
+        session.createNativeQuery("SELECT EID, ENUMBER FROM ENTITYBUS","AuthorValueMapping");
+        session.createNativeQuery("select c from ENTITYBUS c");
+        
         Query query1 = session.createQuery("from Entitybus where Entitybus = :arg ");
         query1.setParameter("arg", "1ENTITYBUS");
 
-        session.createSQLQuery("select c from Entitybus c");
+        session.createSQLQuery("SELECT EID, ENUMBER FROM ENTITYBUS");
         session.createSQLQuery("select c from ENTITYBUS c");
 
         /*SharedSessionContract contract = getSession();
