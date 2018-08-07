@@ -6,7 +6,7 @@ import javax.persistence.EntityManagerFactory
 import javax.persistence.Persistence
 import javax.persistence.Query
 
-object JpaMain {
+object JpaMainKt {
 
 
     @JvmStatic
@@ -29,9 +29,10 @@ object JpaMain {
         val q1 = entitymanager.createQuery("SELECT count(p) FROM Entitybus p")
         val q2 = entitymanager.createNamedQuery("My.Test").setParameter("name", "1*")
 //        val q3 = entitymanager.createNamedStoredProcedureQuery("ReadUsingNamedRefCursors")
-        val q4 = entitymanager.createNativeQuery("SELECT count(p) FROM \"ENTITYBUS\" p")
+        val q4 = entitymanager.createNativeQuery("SELECT count(p) FROM Entitybus p")
 //        val q5 = entitymanager.createStoredProcedureQuery("SELECT count(p) FROM Bus p")
-        val q6 = entitymanager.createEntityGraph("entityGraph")
+
+        val q6 = entitymanager.createEntityGraph("SELECT count(p) FROM Bus p")
         val q5 = entitymanager.createQuery("SELECT c FROM Entitybus c WHERE c.enumber LIKE ?1")
 
         val q7 = entitymanager.createQuery("SELECT count(p)"+ " FROM Entitybus p", Entitybus::class.java)

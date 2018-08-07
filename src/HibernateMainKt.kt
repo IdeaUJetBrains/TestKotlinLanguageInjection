@@ -5,7 +5,7 @@ import org.hibernate.cfg.Configuration
 
 import javax.persistence.metamodel.EntityType
 
-object Main {
+object HibernateMainKt {
     private val ourSessionFactory: SessionFactory
 
     val session: Session
